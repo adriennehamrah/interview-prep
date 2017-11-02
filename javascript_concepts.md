@@ -16,6 +16,8 @@
   - The process of applying a function to some of its arguments.
   - The partially applied function gets returned for later use.
   - Takes advantage of closure scope to *fix* parameters
+- Practical Applications 
+  - Callbacks - e.g. commonly used in web - define a behavior that is attached to some event, usually triggered by the user.
   
 #### References
 [What is a closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
