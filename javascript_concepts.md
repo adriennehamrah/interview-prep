@@ -1,12 +1,33 @@
-# Javascript Concepts
+# JavaScript Concepts
+## Closures
+- "A closure is the combination of a function and the lexical environment within which that function was declared." - MDN web docs
+- Lexical environment - the surrounding state
+- Closures give you access to the outer function's scope from the inner function.
+- In javascript, you create a closure everytime you create a function.
+- To use a closure, create a function inside another function and expose it by returning or passing to another function.
+  - The inner function has access to the other functions variables even after the outer function returns.
+### Use Cases
+- Data Privacy 
+  - Enclosed variables are only accesible within the containing outer function.
+  - You can only get the data from an object's privileged methods.
+    - **Priviledged method** - any exposed method defined within the closure scope
+  - Stateful functions - return values may influenced by their internal state
+- Partial Applications & Currying
+  - The process of applying a function to some of its arguments.
+  - The partially applied function gets returned for later use.
+  - Takes advantage of closure scope to *fix* parameters
+  
+#### References
+[What is a closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
+[Closures - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 ## Functional Programming
 - Build software with pure functions -> avoids shared states, mutable data, side-effects
 - Type of programming paradigm (e.g., OOP, procedural programming)
 - Declarative over imperative
-  - Declarative programming expresses logic, without specifying control flow. Looks at data flow. - WHAT
+  - **Declarative programming** expresses logic, without specifying control flow. Looks at data flow. - WHAT
     - Uses expressions (piece of code that evaluates to value) over statements (if, for, switch) 
-  - Imperative programming uses statements that change a program's state. - HOW
+  - **Imperative programming** uses statements that change a program's state. - HOW
 - Favors pure functions
 ### Key Concepts
 - Avoids Shared State issues such as:
@@ -19,7 +40,7 @@
   - Trie data structures - deep frozen
     - Uses structural sharing to share reference memory locations
 - Reduces Side Effects
-  - Side effects are any app state change observable outside the function other than its return value
+  - Side effects are any app state change observable outside the function other than its return value.
     - Modifying external variable
     - Console logging
     - Writing to a file or network
@@ -34,7 +55,5 @@
   - Functor - something that can be mapped over
     - e.g. Array container
 
-
 #### Reference
-
 [What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
