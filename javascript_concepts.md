@@ -1,4 +1,17 @@
 # JavaScript Concepts
+
+## Pure Functions
+- Given the same input, will always return the same output
+- Produces no side effects
+
+### Use Cases
+- Form the foundation of functional programming
+- Parallel processing across many CPU's and distributed computer clusters
+  - Good for resource intensive computing tasks
+
+#### Reference
+[Pure Functions](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
+
 ## Closures
 - "A closure is the combination of a function and the lexical environment within which that function was declared." - MDN web docs
 - Lexical environment - the surrounding state
@@ -18,7 +31,6 @@
   - Takes advantage of closure scope to *fix* parameters
 - Practical Applications 
   - Callbacks - e.g. commonly used in web - define a behavior that is attached to some event, usually triggered by the user.
-  
 #### References
 [What is a closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
 [Closures - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
@@ -56,6 +68,5 @@
     - Function composition
   - Functor - something that can be mapped over
     - e.g. Array container
-
 #### Reference
 [What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
