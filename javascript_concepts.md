@@ -10,7 +10,7 @@
   - Good for resource intensive computing tasks
 
 #### Reference
-[Pure Functions](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
+[What is a Pure Function?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)
 
 ## Closures
 - "A closure is the combination of a function and the lexical environment within which that function was declared." - MDN web docs
@@ -33,6 +33,7 @@
   - Callbacks - e.g. commonly used in web - define a behavior that is attached to some event, usually triggered by the user.
 #### References
 [What is a closure?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36)
+
 [Closures - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 ## Functional Programming
@@ -66,7 +67,10 @@
     - Create util for acting on multiple data types
     - Curried functions
     - Function composition
+      - The process of combining two or more functions to produce a new function
   - Functor - something that can be mapped over
     - e.g. Array container
-#### Reference
+#### References
 [What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
+
+[What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
