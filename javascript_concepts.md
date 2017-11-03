@@ -26,8 +26,13 @@
     - **Priviledged method** - any exposed method defined within the closure scope
   - Stateful functions - return values may influenced by their internal state
 - Partial Applications & Currying
-  - The process of applying a function to some of its arguments.
-  - The partially applied function gets returned for later use.
+  - **Partial Application** - The process of applying a function to some of its arguments.
+    - Takes in a function multiple parameters and returns a function with fewer parameters
+    - The partially applied function gets returned for later use
+    - May or may not have predictable return type
+  - **Currying** - Takes in a function with multiple parameters, return a function with just one parameter.
+    - Lifts all arguments for function type uniformity - e.g. function composition
+    - Built in iterator mechanism - apply only one argument at a time
   - Takes advantage of closure scope to *fix* parameters
 - Practical Applications 
   - Callbacks - e.g. commonly used in web - define a behavior that is attached to some event, usually triggered by the user.
