@@ -78,4 +78,6 @@
 #### References
 [What is Functional Programming?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0)
 
+[Curry or Partial Application?](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8)
+
 [What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
