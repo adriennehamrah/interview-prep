@@ -120,6 +120,11 @@ p.then((val) => console.log("fulfilled:", val))
 - `Promise.all()` takes an array (or any iterable) of Promises. Once all the Promises are resolved, it then resolves. Or it rejects with reason of first rejected Promise.
 - `Promise.race()` takes an array (or any iterable) of Promises. It returns a Promise that resolves with the value of the first resolved promise in the iterable. Or it rejects with the reason of the first rejected Promise.
 
+### Cancelling a Promise
+- Reject the Promise with cancelled as the reason
+- Don't add `.cancel()`
+  - Non-standard and violates rule that only the creating function should change promise
+
 #### Reference
 [What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
 
