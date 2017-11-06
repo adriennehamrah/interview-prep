@@ -81,3 +81,46 @@
 [Curry or Partial Application?](https://medium.com/javascript-scene/curry-or-partial-application-8150044c78b8)
 
 [What is Function Composition?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0)
+
+## Promises
+- A promise is an object that may produce a single value in the future. It can be returned synchronously from an asynchronous function.
+- ES6 adopted global `Promise` with Promises/A+ spec
+### Features
+- Promises are eager - starts doing given task as soon as promise constructor is invoked
+  - For lazy - use observables or tasks
+- Guarantee about future value - unlike callbacks or events
+  - Immutable - No other registered handlers of that value can change it. Can't be resettled.
+  - No race conditions - Guaranteed to receive the value, regardless of whether handler is registered
+- Can help with unifying asynchronous APIs
+### Drawbacks
+- Can't determine state of a promise or progress in state
+- For recurring values/events use **streams**.
+### Terminology
+- Three states:
+  - Fulfilled: `onFulfilled()` will be called (e.g., `resolve()` was called)
+  - Rejected: `onRejected()` will be called (e.g., `reject()` was called)
+  - Pending: not fulfilled or rejected
+- To consume the promise, attach `.then()` - returns a new Promise
+```javascript
+p.then((val) => console.log("fulfilled:", val),  
+       (err) => console.log("rejected:", err));
+```
+- `Promise.catch()` takes a single handler to be called when a promise is rejected
+  - More explicit than `.then(null, fn)`
+```javascript
+p.then((val) => console.log("fulfilled:", val))  
+ .catch((err) => console.log("rejected:", err));
+
+p.then((val) => console.log("fulfilled:", val))  
+ .then(null, (err) => console.log("rejected:", err));
+```
+
+- `Promise.resolve()` creates an immediately resolved Promise
+- `Promise.reject()` creates an immediately rejected Promise
+- `Promise.all()` takes an array (or any iterable) of Promises. Once all the Promises are resolved, it then resolves. Or it rejects with reason of first rejected Promise.
+- `Promise.race()` takes an array (or any iterable) of Promises. It returns a Promise that resolves with the value of the first resolved promise in the iterable. Or it rejects with the reason of the first rejected Promise.
+
+#### Reference
+[What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
+[ES6 Promises](http://www.datchley.name/es6-promises/)
