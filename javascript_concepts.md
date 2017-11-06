@@ -100,6 +100,20 @@
   - Fulfilled: `onFulfilled()` will be called (e.g., `resolve()` was called)
   - Rejected: `onRejected()` will be called (e.g., `reject()` was called)
   - Pending: not fulfilled or rejected
+  - Settled: fulfilled or rejected
+- Creating a promise:
+```javascript
+var p = new Promise((resolve, reject) => {
+  // do a thing, possibly async, then…
+
+  if (/* everything worked */) {
+    resolve("It worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+```
 - To consume the promise, attach `.then()` - returns a new Promise
 ```javascript
 p.then((val) => console.log("fulfilled:", val),  
@@ -127,5 +141,7 @@ p.then((val) => console.log("fulfilled:", val))
 
 #### Reference
 [What is a Promise?](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261)
+
+[JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/primers/promises)
 
 [ES6 Promises](http://www.datchley.name/es6-promises/)
