@@ -13,9 +13,8 @@
 
 ## Topological Sort
 ### Use Cases
-- Task/dependencies
+- Scheduling tasks/dependencies
 - Webpack
-- Scheduling (given restrictions)
 - Minimal Spanning Tree
 ### Kahn's Alogorithm
 1. Queue all vertices with no in-edges
