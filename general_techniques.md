@@ -23,4 +23,6 @@
  - Push vertex into sorted array
  - Examine destination vertices. Push and queue if no more in-edges
  - Repeat
-  
+ ### Coffman-Graham Algorithm
+ - Modified Kahn's that is deterministic
+ ### Depth First Search
