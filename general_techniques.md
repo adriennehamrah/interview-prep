@@ -10,3 +10,18 @@
 - density = |E| / |V| ( |V| - 1 )
   - max density = 1 (undirected), 2 (directed)
   - min density = 0
+
+## Topological Sort
+### Use Cases
+- Task/dependencies
+- Webpack
+- Scheduling (given restrictions)
+- Minimal Spanning Tree
+### Kahn's Alogorithm
+1. Queue all vertices with no in-edges
+2. Pop off vertices from queues
+ - Remove vertex and out-edges
+ - Push vertex into sorted array
+ - Examine destination vertices. Push and queue if no more in-edges
+ - Repeat
+  
