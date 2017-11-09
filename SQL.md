@@ -36,7 +36,7 @@ FROM table_name
    - returns `-1` if the first argument is smaller than the second according to the current sort order
    - returns `1` otherwise
 - `REGEX`  - pattern matching with regular expressions (`RLIKE` is the same thing)
-  - `WHERE city REGEXP "^[aeiou].*";` (where city name starts with a vowel)
+  - `WHERE city REGEXP '^[aeiou]';` (where city name starts with a vowel)
 - `NOT REGEX`
 
 #### `COALESCE` (PostgreSQL, MySQL)
