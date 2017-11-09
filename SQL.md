@@ -24,7 +24,7 @@ FROM table_name
 - `AVG`
 - `SUM`
 
-#### `COALESCE`
+#### `COALESCE` (PostgreSQL, MySQL)
 - Returns first non-null argument
 - ` SELECT COALESCE(NULL, 1, 2) `
 
