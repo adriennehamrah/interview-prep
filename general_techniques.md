@@ -20,10 +20,19 @@
 ### Binary Heap
 - A complete binary tree where the parent node value is either always greater (max heap) or smaller (min heap)
 - Array based representation
-  - Children indices are 2i + 1, 2i + 2
+  - Children indices are `2i + 1`, `2i + 2`
 - Peeking at min/max O(1)
-- Insertion O(log(n))
-- Extraction O(log(n))
+- Insertion O(log n)
+- Extraction O(log n)
+
+### Implementation
+- O(n log n) worse case
+- Build a max heap of size n
+- The root element will be the largest in the array 
+  - Swap the root with the last element to remove to root
+  - Heapify down to place the swapped element in the right position
+  - Decrease the length by 1
+- Repeat until size is 1
 
 ## Primes
 - Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
