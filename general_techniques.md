@@ -16,6 +16,15 @@
 - Hash map points to node object in linked list, allowing for O(1) lookup
 - Delete, insert, and lookup are all O(1)
 
+## Heap Sort
+### Binary Heap
+- A complete binary tree where the parent node value is either always greater (max heap) or smaller (min heap)
+- Array based representation
+  - Children indices are 2i + 1, 2i + 2
+- Peeking at min/max O(1)
+- Insertion O(log(n))
+- Extraction O(log(n))
+
 ## Primes
 - Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
 - Remember to check for n = 0, 1, or 2 first.
