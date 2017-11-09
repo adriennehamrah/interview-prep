@@ -24,9 +24,23 @@ FROM table_name
 - `AVG`
 - `SUM`
 
+#### String Comparision
+- `LIKE` - simple pattern matching
+   - `%` - wildcard that matches any number of characters, even zero characters
+   - `_` - matches exactly one character
+   - MySQL lets you compare numeric expressions
+     - `SELECT 10 LIKE '1%';`
+- `NOT LIKE`
+- `STRCMP(expr1,expr2)`
+   - returns `0` if strings are the same
+   - returns `-1` if the first argument is smaller than the second according to the current sort order
+   - returns `1` otherwise
+- `REGEX`  - pattern matching with regular expressions (`RLIKE` is the same thing)
+- `NOT REGEX`
+
 #### `COALESCE` (PostgreSQL, MySQL)
 - Returns first non-null argument
-- ` SELECT COALESCE(NULL, 1, 2) `
+- `SELECT COALESCE(NULL, 1, 2);`
 
 #### Even or Odd
 - `MOD(col_name, 2) = 0`
@@ -37,4 +51,4 @@ FROM table_name
 
 #### `LENGTH`
 - Returns the length of the specified string (in bytes).
-- `SELECT LENGTH(title) AS TitleLength`
+- `SELECT LENGTH(title) AS TitleLength;`
