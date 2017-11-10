@@ -63,6 +63,11 @@ LIMIT
 - Returns the length of the specified string (in bytes).
 - `SELECT LENGTH(title) AS TitleLength;`
 
+#### `RIGHT`
+- Extract substring from right
+- `SELECT RIGHT(name, 3)`
+- `ORDER BY RIGHT(name, 3)`
+
 ## Update
 ```sql
 UPDATE
