@@ -1,16 +1,25 @@
-### General SELECT query structure
+## SELECT query structure
 
 ```SQL
-SELECT DISTINCT column, AGGREGATE_FUNCTION(column or expression),...
-FROM table_name
-  JOIN another_table
-  ON table.column = another_table.column
-  WHERE constraint_expression
-  GROUP BY column  
-  HAVING constraint_expression
-  ORDER BY column ASC/DESC
-  LIMIT num_limit OFFSET num_offset;
- ```
+SELECT DISTINCT 
+  column, AGGREGATE_FUNCTION(column or expression),...
+FROM 
+  table_name
+JOIN 
+  another_table
+ON 
+  table.column = another_table.column
+WHERE 
+  constraint_expression
+GROUP BY 
+  column  
+HAVING 
+  constraint_expression
+ORDER BY 
+  column ASC/DESC
+LIMIT 
+  num_limit OFFSET num_offset;
+```
  
 #### Actual Order Performed
 `FROM`, `JOIN`, `ON`, `WHERE`, `GROUP BY`, `HAVING`, `SELECT`, `ORDER BY`, `LIMIT`
@@ -53,3 +62,31 @@ FROM table_name
 #### `LENGTH`
 - Returns the length of the specified string (in bytes).
 - `SELECT LENGTH(title) AS TitleLength;`
+
+## Update
+```sql
+UPDATE
+  table_name
+SET
+  column1 = val1,
+  column2 = val2
+WHERE
+  conditions;
+```
+
+## Insert
+```sql
+INSERT INTO
+  table_name (column_names)
+VALUES
+  (values);
+```
+
+## Delete
+```sql
+DELETE FROM
+  table_name
+WHERE
+  conditions
+```
+
