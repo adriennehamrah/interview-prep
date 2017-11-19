@@ -1,5 +1,10 @@
 # General Techniques and Concepts
 
+## GCD
+- `gcd(m, n) = gcd(m % n, n)` for `m > n` 
+- Find max of two numbers first, swap as necessary
+- Check if `m` or `n` is zero first - every integer is a divisor of zero
+
 ## Linked List 
 - Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
 - Sentinal nodes avoids type checking for nil
