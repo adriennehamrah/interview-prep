@@ -5,6 +5,17 @@
 - Find max of two numbers first, swap as necessary
 - Check if `m` or `n` is zero first - every integer is a divisor of zero
 
+```ruby
+ def gcd(a, b)
+   a, b = b, a if b > a
+   if b == 0
+     return a
+   end
+  
+   return gcd( b, a % b)       
+ end
+```
+
 ## Linked List 
 - Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
 - Sentinal nodes avoids type checking for nil
