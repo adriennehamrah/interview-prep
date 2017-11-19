@@ -1,5 +1,23 @@
 # General Techniques and Concepts
 
+## Factors
+- Need to only check up to sqrt of `n`
+
+```ruby
+  def allFactors(n)
+    factors = []
+    limit = (n**0.5).to_i
+    (1..limit).each do |num|
+      if n % num == 0
+        factors << num
+        factors << n / num
+      end
+    end
+    
+    return factors.uniq.sort
+    end
+```
+
 ## GCD
 - `gcd(m, n) = gcd(m % n, n)` for `m > n` 
 - Find max of two numbers first, swap as necessary
