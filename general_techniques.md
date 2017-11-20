@@ -6,10 +6,9 @@
    return "0" if a == 0
 
    num = []
-   remainder = a
-   while remainder > 0 
-     num.unshift(remainder % 2)
-     remainder /= 2
+   while a > 0 
+     num.unshift(a % 2)
+     a /= 2
    end
    num.join
  end
