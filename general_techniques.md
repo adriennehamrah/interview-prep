@@ -1,5 +1,27 @@
 # General Techniques and Concepts
 
+## Binary Number
+```ruby
+ def findDigitsInBinary(a)
+   return "0" if a == 0
+
+   num = []
+   remainder = a
+   while remainder > 0 
+      num.unshift(remainder % 2)
+      remainder /= 2
+   end
+   num.join
+ end
+```
+or
+
+```ruby
+ def findDigitsInBinary(a)
+   a.to_s(2)
+ end
+```
+
 ## Factors
 - Need to only check up to sqrt of `n`
 
@@ -15,7 +37,7 @@
     end
     
     return factors.uniq.sort
-    end
+  end
 ```
 
 ## GCD
