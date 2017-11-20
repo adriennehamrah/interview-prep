@@ -56,6 +56,39 @@ or
  end
 ```
 
+## Primes
+- Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
+- Remember to check for n = 0, 1 first
+
+## Trailing Zeros
+- Find number of multiples of 5, since 5*2 = 10, and there are far more 2's than 5's.
+  - If dividing by 5 results in a decimal, truncate to whole number.
+- Time Complexity: `O(logn)`
+
+```ruby
+ def trailingZeroes(a)
+   i = 5
+   count = 0
+   while i <= a #i < 1
+     count += a/i
+     i *= 5
+   end
+   count
+end
+```
+or
+
+```ruby
+def trailingZeroes(a)
+  n = 0
+  while(a != 0)
+    n += a/5
+    a/=5
+  end
+  n
+end
+```
+
 ## Linked List 
 - Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
 - Sentinal nodes avoids type checking for nil
@@ -89,10 +122,6 @@ or
   - Heapify down to place the swapped element in the right position
   - Decrease the length by 1
 - Repeat until size is 1
-
-## Primes
-- Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
-- Remember to check for n = 0, 1 first
 
 ## Graphs
 - |V| = # vertices
