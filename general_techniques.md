@@ -8,8 +8,8 @@
    num = []
    remainder = a
    while remainder > 0 
-      num.unshift(remainder % 2)
-      remainder /= 2
+     num.unshift(remainder % 2)
+     remainder /= 2
    end
    num.join
  end
