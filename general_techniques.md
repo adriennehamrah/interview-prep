@@ -21,6 +21,9 @@ or
  end
 ```
 
+## Base Number Conversion
+- For any base N, divide the decimal number by N and keep track of the remainders.
+
 ## Factors
 - Need to only check up to sqrt of `n`
 
