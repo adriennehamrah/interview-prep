@@ -24,6 +24,22 @@ or
 ## Base Number Conversion
 - For any base N, divide the decimal number by N and keep track of the remainders.
 
+## Base 26 Conversion
+- Reverse the string
+- Keep track of index - this is like the 10th, 100th place
+``` ruby
+def alphaToNumber(a)
+  alpha = ('A'..'Z').to_a
+  res = 0
+  a.reverse.split('').each_with_index do |ch, idx|
+    pos = alpha.index(ch) + 1
+    power = 26**idx
+    res += power*pos
+  end
+  res
+end
+```
+
 ## Factors
 - Need to only check up to sqrt of `n`
 
