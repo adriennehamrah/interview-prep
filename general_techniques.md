@@ -24,7 +24,25 @@ or
 ## Base Number Conversion
 - For any base N, divide the decimal number by N and keep track of the remainders.
 
-## Base 26 Conversion
+## Base 26 Conversion - number to alpha
+- Subtract 1 to account for zero index array!
+- Append to beginning so it's reversed
+
+``` ruby
+def numberToAlpha(a)
+  alpha = ("A".."Z").to_a
+  res = ""
+
+  while a > 0 
+    remainder = (a - 1) % 26
+    result = alpha[remainder] + result
+    a = (a - 1)/26
+  end
+  res
+end
+```
+
+## Base 26 Conversion - alpha to number
 - Reverse the string
 - Keep track of index - this is like the 10th, 100th place
 ``` ruby
