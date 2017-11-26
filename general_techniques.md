@@ -57,6 +57,8 @@ def alphaToNumber(a)
   res
 end
 ```
+## Duplicate in Array
+- Use a `Set` to keep track of seen values - O(n) space and traverse in O(1) time 
 
 ## Factors
 - Need to only check up to sqrt of `n`
