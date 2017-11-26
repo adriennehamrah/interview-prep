@@ -65,7 +65,7 @@ end
 - Do another pass and process just those elements in the oversubscribed range. 
 - Use a hash to count frequencies and find a repeated element.
 
-- Or use list or hash to keep a count
+Or use list or hash to keep a count
 ```python
 def repeatedNumber(self, A):
     n = len(A)
