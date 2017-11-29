@@ -111,6 +111,11 @@ def repeatedNumber(self, A):
    return gcd( b, a % b)       
  end
 ```
+
+## Create Largest Number
+- To create the largest number from an array, sort by comparing two numbers a + b and b + a
+ - e.g., for 12 and 120, compare 12120 and 12012
+
 ## Pascal Nth Row
 ``` ruby
 def PascalRow(n)
