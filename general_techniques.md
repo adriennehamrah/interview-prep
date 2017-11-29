@@ -1,7 +1,5 @@
-# General Techniques and Concepts
-
-## Arrays
-### Duplicate in Array
+# Arrays
+## Duplicate in Array
 - `O(sqrt(n))` space complexity, 2 sequential passes through stream
 - Split the numbers from 1 to n in `sqrt(n)` ranges so that range i corresponds to `[sqrt(n) * i .. sqrt(n) * (i + 1))`.
 - Do one pass through the stream of numbers and figure out how many numbers fall in each of the ranges. 
@@ -21,12 +19,12 @@ def repeatedNumber(self, A):
             return A[i]
     return -1
 ```
-### Largest Number
+## Largest Number
 - To create the largest number from an array of numbers, use any comparison sort by comparing two numbers XY and YX
   - e.g., for 12 and 120, compare 12120 and 12012 and put the largest number first.
   - Sort the entire array and join the sorted array.
 
-### Max Contiguous Sum of Sub Array
+## Max Contiguous Sum of Sub Array
 - O(n) time
 - Keep track of current max and current sum. Set current sum to current num if current num is greater than the sum.
 
@@ -51,7 +49,7 @@ def maxSubArray(a)
 end
 ```
 
-### Pascal Nth Row
+## Pascal Nth Row
 ``` ruby
 def PascalRow(n)
   return [1] if n.zero?
@@ -67,8 +65,8 @@ def PascalRow(n)
 end
 ```
 
-## Math
-### Binary Number
+# Math
+## Binary Number
 ```ruby
  def findDigitsInBinary(a)
    return "0" if a == 0
@@ -89,10 +87,10 @@ or
  end
 ```
 
-### Base Number Conversion
+## Base Number Conversion
 - For any base N, divide the decimal number by N and keep track of the remainders.
 
-### Base 26 Conversion - number to alpha
+## Base 26 Conversion - number to alpha
 - Subtract 1 to account for zero index array!
 - Append to beginning so it's reversed
 
@@ -110,7 +108,7 @@ def numberToAlpha(a)
 end
 ```
 
-### Base 26 Conversion - alpha to number
+## Base 26 Conversion - alpha to number
 - Reverse the string
 - Keep track of index - this is like the 10th, 100th place
 ``` ruby
@@ -126,7 +124,7 @@ def alphaToNumber(a)
 end
 ```
 
-### Factors
+## Factors
 - Need to only check up to sqrt of `n`
 
 ```ruby
@@ -144,7 +142,7 @@ end
   end
 ```
 
-### GCD
+## GCD
 - `gcd(m, n) = gcd(m % n, n)` for `m > n` 
 - Find max of two numbers first, swap as necessary
 - Check if `m` or `n` is zero first - every integer is a divisor of zero
@@ -160,11 +158,11 @@ end
  end
 ```
 
-### Primes
+## Primes
 - Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
 - Remember to check for n = 0, 1 first
 
-### Trailing Zeros
+## Trailing Zeros
 - Find number of multiples of 5, since 5*2 = 10, and there are far more 2's than 5's.
   - If dividing by 5 results in a decimal, truncate to whole number.
 - Time Complexity: `O(logn)`
@@ -192,28 +190,27 @@ def trailingZeroes(a)
   n
 end
 ```
-## Other Data Structures
+# Other Data Structures
 
-### Linked List 
+## Linked List 
 - Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
 - Sentinal nodes avoids type checking for nil
 
-### Hash Map
+## Hash Map
 - Key value pairs stored in hash buckets of Linked Lists
 - Hash the key before moding by number of buckets
 - Resize when number of items in linked list is >= total number of buckets
 - Delete, insert, and lookup are all O(1)
 
-### LRU Cache
+## LRU Cache
 - Use hash map and linked list
 - Remove the least recently used item in a cache (linked list) when it's full
 - Hash map points to node object in linked list, allowing for O(1) lookup
 - Delete, insert, and lookup are all O(1)
 
-## Sorting
-
-### Heap Sort
-#### Binary Heap
+# Sorting
+## Heap Sort
+### Binary Heap
 - A complete binary tree where the parent node value is either always greater (max heap) or smaller (min heap)
 - Array based representation
   - Children indices are `2i + 1`, `2i + 2`
@@ -221,7 +218,7 @@ end
 - Insertion O(log n)
 - Extraction O(log n)
 
-#### Implementation
+### Implementation
 - O(n log n) worse case
 - Build a max heap of size n
 - The root element will be the largest in the array 
@@ -230,25 +227,25 @@ end
   - Decrease the length by 1
 - Repeat until size is 1
 
-### Graphs
+## Graphs
 - |V| = # vertices
 - |E| = # edges
 - density = |E| / |V| ( |V| - 1 )
   - max density = 1 (undirected), 2 (directed)
   - min density = 0
 
-### Topological Sort
-#### Use Cases
+## Topological Sort
+### Use Cases
 - Scheduling tasks/dependencies
 - Webpack
 - Minimal Spanning Tree
-#### Kahn's Alogorithm
+### Kahn's Alogorithm
 1. Queue all vertices with no in-edges
 2. Pop off vertices from queues
  - Remove vertex and out-edges
  - Push vertex into sorted array
  - Examine destination vertices. Push and queue if no more in-edges
  - Repeat
- #### Coffman-Graham Algorithm
+ ### Coffman-Graham Algorithm
  - Modified Kahn's that is deterministic
- #### Depth First Search
+ ### Depth First Search
