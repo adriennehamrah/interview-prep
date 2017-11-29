@@ -113,8 +113,9 @@ def repeatedNumber(self, A):
 ```
 
 ## Create Largest Number
-- To create the largest number from an array, sort by comparing two numbers a + b and b + a
- - e.g., for 12 and 120, compare 12120 and 12012
+- To create the largest number from an array of numbers, use any comparison sort by comparing two numbers XY and YX
+  - e.g., for 12 and 120, compare 12120 and 12012 and put the largest number first.
+  - Sort the entire array and join the sorted array.
 
 ## Pascal Nth Row
 ``` ruby
