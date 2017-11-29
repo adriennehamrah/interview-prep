@@ -112,10 +112,35 @@ def repeatedNumber(self, A):
  end
 ```
 
-## Create Largest Number
+## Largest Number
 - To create the largest number from an array of numbers, use any comparison sort by comparing two numbers XY and YX
   - e.g., for 12 and 120, compare 12120 and 12012 and put the largest number first.
   - Sort the entire array and join the sorted array.
+  
+## Max Contiguous Sum of Sub Array
+- O(n) time
+- Keep track of current max and current sum. Set current sum to current num if current num is greater than the sum.
+
+```ruby
+def maxSubArray(a)
+  curr_max = a.first 
+  curr_sum = a.first
+
+  a[1..-1].each do |num|
+    curr_sum += num
+
+    if num > curr_sum
+      curr_sum = num
+    end
+
+    if curr_sum > curr_max
+      curr_max = curr_sum
+    end
+  end
+  
+  curr_max
+end
+```
 
 ## Pascal Nth Row
 ``` ruby
