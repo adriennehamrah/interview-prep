@@ -160,11 +160,11 @@ end
  end
 ```
 
-## Primes
+### Primes
 - Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
 - Remember to check for n = 0, 1 first
 
-## Trailing Zeros
+### Trailing Zeros
 - Find number of multiples of 5, since 5*2 = 10, and there are far more 2's than 5's.
   - If dividing by 5 results in a decimal, truncate to whole number.
 - Time Complexity: `O(logn)`
