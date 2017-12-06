@@ -158,6 +158,19 @@ end
  end
 ```
 
+## Grid Unique Paths
+- Count all paths from top to bottom of `mxn` matrix
+- Time complexity of first example is O(2^m) - exponential
+
+```ruby
+def uniquePaths(a, b)
+  return 1 if a == 1 || b == 1
+  
+  uniquePaths(a - 1, b) + uniquePaths(a, b -1)
+end
+```
+- Use dynamic programming to make time complexity of O(mn)
+
 ## Primes
 - Check for prime factors up to the square root of `n`. Time complexity: `O(sqrt(n))`
 - Remember to check for n = 0, 1 first
