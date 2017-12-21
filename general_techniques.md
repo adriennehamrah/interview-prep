@@ -143,9 +143,9 @@ end
 ```
 
 ## GCD
-- `gcd(m, n) = gcd(m % n, n)` for `m > n` 
+- `gcd(a, b) = gcd(a % b, b)` for `a > b` 
 - Find max of two numbers first, swap as necessary
-- Check if `m` or `n` is zero first - every integer is a divisor of zero
+- Check if `a` or `b` is zero first - every integer is a divisor of zero
 
 ```ruby
  def gcd(a, b)
@@ -154,7 +154,7 @@ end
      return a
    end
   
-   return gcd( b, a % b)       
+   return gcd(a % b, b)       
  end
 ```
 
