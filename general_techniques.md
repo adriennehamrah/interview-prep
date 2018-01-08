@@ -55,7 +55,7 @@ def PascalRow(n)
   return [1] if n.zero?
   return [1,1] if n == 1
 
-  prev = getRow(n - 1)
+  prev = PascalRow(n - 1)
   row = []
   (0..(prev.length - 2)).each do |i|
       row << prev[i] + prev[i + 1]
