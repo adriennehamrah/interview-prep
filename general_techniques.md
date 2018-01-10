@@ -196,6 +196,47 @@ def trailingZeroes(a)
   n
 end
 ```
+# Binary Search
+## Count Number of Occurences of Element in an Sorted Array
+- `O(logn)` time via binary search
+- Find first and last index of occurence
+
+```ruby
+  def binarySearch(arr, target, first)
+    result = -1
+    low = 0
+    high = arr.length - 1
+
+    while low <= high
+      mid = (low + high) / 2
+
+      case arr[mid] <=> target
+      when 0
+        result = mid
+        if first 
+          high = mid - 1
+        else 
+          low = mid + 1
+        end
+      when 1
+        high = mid - 1
+      else
+        low = mid + 1
+      end
+    end
+    result
+  end 
+    
+  def findCount(arr, target)
+    first = binarySearch(arr, target, true)
+    return 0 if first == -1
+
+    last = binarySearch(arr, target, false)    
+
+    last - first + 1
+  end
+ ```
+
 # Other Data Structures
 
 ## Linked List 
