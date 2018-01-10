@@ -1,13 +1,6 @@
 # Arrays
 ## Duplicate in Array
-- `O(sqrt(n))` space complexity, 2 sequential passes through stream
-- Split the numbers from 1 to n in `sqrt(n)` ranges so that range i corresponds to `[sqrt(n) * i .. sqrt(n) * (i + 1))`.
-- Do one pass through the stream of numbers and figure out how many numbers fall in each of the ranges. 
-- At least one of the ranges will contain more than `sqrt(n)` elements.
-- Do another pass and process just those elements in the oversubscribed range. 
-- Use a hash to count frequencies and find a repeated element.
-
-Or use list or hash to keep a count
+Use set or hash to keep a count
 ```python
 def repeatedNumber(self, A):
     n = len(A)
