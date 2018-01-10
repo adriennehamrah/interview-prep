@@ -197,7 +197,7 @@ def trailingZeroes(a)
 end
 ```
 # Binary Search
-## Count Number of Occurences of Element in an Sorted Array
+## Count Number of Occurences of Element in a Sorted Array
 - `O(logn)` time via binary search
 - Find first and last index of occurence
 
