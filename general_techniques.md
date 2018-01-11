@@ -269,8 +269,9 @@ def sqrt(self, A):
 ```
 
 # Strings
-## Longest Palidrome Substring
-- Code below is Time: `O(n^2)`, Space: `O(1)`
+## Longest Palindrome Substring
+- Check for longest palindrome centered around a point and expand from there.
+    - Time: `O(n^2)`, Space: `O(1)`. Code below.
 - Linear time: http://davidoncode.blogspot.com/2013/03/finding-longest-palindrome-in-ruby.html
 
 ``` ruby
