@@ -268,6 +268,41 @@ def sqrt(self, A):
     return mid
 ```
 
+# Strings
+## Longest Palidrome Substring
+- Code below is Time: `O(n^2)`, Space: `O(1)`
+- Linear time: http://davidoncode.blogspot.com/2013/03/finding-longest-palindrome-in-ruby.html
+
+``` ruby
+def longest_palindrome(str)  
+  longest = ""  
+  
+  (0..str.size-1).each do |i| 
+    # odd length
+    odd = form_palindrome(str, i, i)  
+    longest = odd if odd.size > longest.size 
+    
+    # even length
+    even = form_palindrome(str, i, i+1)  
+    longest = even if even.size > longest.size  
+  end 
+  
+  longest  
+end  
+
+def form_palindrome(str, left, right)  
+  palindrome = "" 
+  
+  while (left >= 0 && right < str.size && str[left] == str[right])  
+    palindrome = str[left..right]  
+    left -= 1  
+    right += 1  
+  end  
+  
+  palindrome   
+end
+```
+
 # Other Data Structures
 
 ## Linked List 
