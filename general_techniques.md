@@ -236,6 +236,10 @@ end
     last - first + 1
   end
  ```
+
+## Rotated Sorted Array Search
+- Find pivot point with binary search
+- Compare first element in array, if target is larger, search in left side. Else search in right.
  
 ## Square Root of Integer
 - Use binary search from 2 to A/2
