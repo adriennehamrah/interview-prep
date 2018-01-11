@@ -304,11 +304,66 @@ def form_palindrome(str, left, right)
 end
 ```
 
-# Other Data Structures
-
-## Linked List 
+# Linked List
 - Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
 - Sentinal nodes avoids type checking for nil
+
+## Reverse Linked List
+``` ruby
+def reverseList(a)
+    current = a
+    next_node = nil
+    prev = nil
+
+    while current != nil do
+      next_node = current.next
+      current.next = prev
+      prev = current
+      current = next_node
+    end
+
+    prev
+end
+```
+
+## Intersection of Two Linked Lists
+- Find difference in lengths of two lists. Start pointers at same distance from end. Find where pointers are the same.
+- Time: `O(n)`, Space: `O(1)`
+``` Python
+def getIntersectionNode(self, A, B):
+
+    def length(l):
+        len_list = 0
+        while l:
+            len_list += 1
+            l = l.next
+        return len_list
+
+    lena = length(A)
+    lenb = length(B)
+    if lena > lenb:
+        A, B= B, A
+        d = lena - lenb
+        lena, lenb = lenb, lena
+    else:
+        d = lenb - lena
+
+    for i in range(d):
+        B = B.next
+
+    while A and B:
+        if A == B:
+            return A
+        else:
+            A = A.next
+            B = B.next
+
+    return None
+```
+
+# Other Data Structures
+
+
 
 ## Hash Map
 - Key value pairs stored in hash buckets of Linked Lists
