@@ -325,6 +325,24 @@ def reverseList(a)
     prev
 end
 ```
+## List Cycle - Return node where cycle beings
+- Tortoise and hare (x, 2x speeds)
+- Once intersection is found, start a pointer at the beginning and move at same speed. Find the intersection.
+
+``` python
+def detectCycle(self, A):
+        slow = fast = A
+        
+        while True:
+            if not(fast and fast.next):return None
+            slow, fast = slow.next, fast.next.next
+            if fast == slow: break
+        
+        slow = A
+      
+        while slow != fast: slow, fast = slow.next, fast.next
+        return slow
+```
 
 ## Delete kth Node from End of LL
 - Use two pointers
