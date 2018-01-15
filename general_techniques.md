@@ -305,8 +305,8 @@ end
 ```
 
 # Linked List
-- Head and tail can either have value of `nil` or be sentinal nodes (dummy nodes that do not hold a value)
-- Sentinal nodes avoids type checking for nil
+- Head and tail can either have value of `nil` or be sentinel nodes (dummy nodes that do not hold a value)
+- Sentinel nodes avoids type checking for nil - simplier code for insertion and deletion.
 
 ## Reverse Linked List
 ``` ruby
@@ -324,6 +324,42 @@ def reverseList(a)
 
     prev
 end
+```
+
+## Delete kth Node from End of LL
+- Use two pointers
+
+``` ruby
+    def removeNthFromEnd(a, b)
+        return a if (a.nil?)
+        return nil if(a.next.nil? and b == 1)
+        
+        i = 0
+        lead_node = a
+        trailing_node = a
+        
+        while (lead_node && i < b)
+            lead_node = lead_node.next
+            i += 1
+        end
+        
+        if(lead_node.nil? || lead_node.next.nil? )
+            a = a.next
+            return a
+        end
+       
+        while lead_node.next
+            lead_node = lead_node.next
+            trailing_node = trailing_node.next
+        end     
+        
+      
+       delete_node = trailing_node.next
+       trailing_node.next = delete_node.next
+       delete_node = nil
+       
+       a
+    end
 ```
 
 ## Intersection of Two Linked Lists
