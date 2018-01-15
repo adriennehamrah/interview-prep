@@ -397,6 +397,35 @@ def getIntersectionNode(self, A, B):
     return None
 ```
 
+## Partition Linked List
+- Create two new pointer nodes - one from nodes smaller than b, one for nodes larger
+``` ruby
+   def partition(a, b)
+        return a if a.nil? || a.next.nil?
+        
+        n1 = ListNode.new(-1)
+        n2 = ListNode.new(-1)
+        
+        less = n1
+        more = n2
+        curr = a
+        
+        while curr
+            if curr.data < b
+                less = less.next = curr
+            else
+               more = more.next = curr
+            end
+            curr = curr.next
+        end
+        
+        more.next = nil
+        less.next = n2.next
+        
+        return n1.next
+    end
+ ```
+
 # Other Data Structures
 
 
