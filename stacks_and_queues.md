@@ -1,6 +1,10 @@
 # Stacks and Queues
 ## Stacks
 
+### Max Min Stack
+- Store the max and min values of the stack when you push a new element into the stack
+- Peeking at the top element gives you the current max/min
+
 ### RPM Calculator
 ``` ruby
 def evalRPN(a)
