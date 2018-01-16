@@ -19,7 +19,7 @@ def evalRPN(a)
   end
   
   stack.first
-  end
+end
 ```
 
 ## Queues
