@@ -9,7 +9,7 @@ def getSuccessor(self, A, B):
     root = A
     succ = root
 
-    while root.val !=B:
+    while root.val != B:
         if B > root.val:
             root = root.right
         else:
@@ -17,7 +17,7 @@ def getSuccessor(self, A, B):
             root = root.left
     if root.right != None:
         root = root.right
-        while root.left!=None:
+        while root.left!= None:
             root = root.left
         return root
     else:
