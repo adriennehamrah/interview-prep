@@ -1,4 +1,89 @@
 # Trees
+## In Order Traversal (left, root, right)
+```ruby
+def inorderTraversal(root)
+  stack = []
+  res = []
+  curr = root
+  
+  while !stack.empty? || curr
+    if curr
+      stack << curr
+      curr = curr.left
+    else
+      curr = stack.pop
+      res << curr.data
+      curr = curr.right
+    end
+  end
+  
+  res
+end
+```
+
+## Pre-Order Traversal (root, left, right)
+```ruby
+def preordertraversal(root)
+  stack = []
+  res = []
+  curr = root
+  
+  while !stack.empty? || curr
+    if curr
+      stack << curr 
+      res = curr.data
+      curr = curr.left 
+    else
+      curr = stack.pop 
+      curr = curr.right
+  end
+  
+  res
+end
+```
+
+## Post-Order Travesal (left, right, root)
+- Reverse
+``` ruby
+def postorderTraversal(root)
+  return [] unless root
+  
+  node = root
+  stack = [node]
+  res = []
+  
+  while !stack.empty?
+    node = stack.pop
+    res << node.data
+    stack << node.left if node.left
+    stack << node.right if node.right
+  end
+  
+  res.reverse
+end
+```
+
+- Unshift
+```ruby
+def postorderTraversal(root)
+  stack = []
+  res = []
+  curr = root
+  
+  while !stack.empty? || curr
+    if curr
+      stack << curr
+      res.unshift(curr.data)
+      curr = curr.right
+    else
+      curr = stack.pop
+      curr = curr.left
+    end
+  end
+  
+  res
+end
+```
 
 ## Valid BST?
 - Solution 1: Use recursion and min/max `O(n) time` as opposed to no min/max `O(n^2)`
