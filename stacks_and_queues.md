@@ -7,7 +7,7 @@
 
 ### RPM Calculator
 ``` ruby
-def evalRPN(a)
+def eval_RPN(a)
   stack = []
 
   a.each do |el|
@@ -31,7 +31,7 @@ end
 - Use a queue and always store index of max number as first element in queue
 - `O(n)` time
 ```ruby
-def slidingMaximum(a, b)
+def sliding_maximum(a, b)
   res, queue = [], []
 
   (0..a.size-1).each do |i|
