@@ -4,7 +4,7 @@
 
 ## Reverse Linked List
 ``` ruby
-def reverseList(a)
+def reverse_list(a)
     current = a
     next_node = nil
     prev = nil
@@ -24,7 +24,7 @@ end
 - Once intersection is found, start a pointer at the beginning and move at same speed. Find the intersection.
 
 ``` python
-def detectCycle(self, A):
+def detect_cycle(self, A):
     slow = fast = A
 
     while True:
@@ -42,7 +42,7 @@ def detectCycle(self, A):
 - Use two pointers
 
 ``` ruby
-def removeNthFromEnd(a, b)
+def remove_Nth_from_end(a, b)
     return a if (a.nil?)
     return nil if(a.next.nil? and b == 1)
 
@@ -78,7 +78,7 @@ end
 - Find difference in lengths of two lists. Start pointers at same distance from end. Find where pointers are the same.
 - Time: `O(n)`, Space: `O(1)`
 ``` Python
-def getIntersectionNode(self, A, B):
+def get_intersection_node(self, A, B):
 
     def length(l):
         len_list = 0
