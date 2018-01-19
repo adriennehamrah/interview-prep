@@ -1,7 +1,43 @@
 # Trees
+
+# Max Depth
+```ruby
+def max_depth(a)
+  return 0 if a.nil?
+
+  1 + [max_depth(a.left), max_depth(a.right)].max
+end
+```
+
+# Min Depth
+- Level order traversal and return first leaf node
+- Keep track of depth
+```ruby
+def min_depth(root)
+  return 0 unless root
+       
+  q = []
+  q  << { node: root, depth: 1 }
+
+  while !q.empty?
+    queueItem = q.shift
+    node = queueItem[:node]
+    depth = queueItem[:depth]
+
+    if node.left.nil? && node.right.nil?    
+        return depth 
+    end 
+    
+    q << { node: node.left, depth: depth + 1 } if node.left
+    q << { node: node.right, depth: depth + 1 } if node.right
+  end
+
+end
+```
+
 ## In Order Traversal (left, root, right)
 ```ruby
-def inorderTraversal(root)
+def in_order_traversal(root)
   stack = []
   res = []
   curr = root
@@ -23,7 +59,7 @@ end
 
 ## Pre-Order Traversal (root, left, right)
 ```ruby
-def preordertraversal(root)
+def preorder_traversal(root)
   stack = []
   res = []
   curr = root
@@ -45,7 +81,7 @@ end
 ## Post-Order Travesal (left, right, root)
 - Reverse
 ``` ruby
-def postorderTraversal(root)
+def postorder_traversal(root)
   return [] unless root
   
   node = root
@@ -65,7 +101,7 @@ end
 
 - Unshift
 ```ruby
-def postorderTraversal(root)
+def postorder_traversal(root)
   stack = []
   res = []
   curr = root
@@ -119,6 +155,42 @@ def vertical_order_traversal(root)
 end
 ```
 
+## Zig Zag Traversal
+- Use breadth first and reverse for each row
+```
+def zigzag_levelorder(root)
+  return [] unless root
+  
+  queue = [root]
+  ans = []
+  mod = 0
+  
+  while !queue.empty?
+    i = 0
+    n = queue.length
+    list = []
+    
+    while i < n
+      node = queue.shift
+      queue << node.left if node.left
+      queue << node.right if node.right
+      list << node.data
+      i += 1
+    end
+    
+    if mod % 2 == 0
+      ans << list 
+    else
+      ans << list.reverse
+    end
+    
+    mod += 1 
+  end
+  
+  ans
+end
+```
+
 ## Valid BST?
 - Solution 1: Use recursion and min/max `O(n) time` as opposed to no min/max `O(n^2)`
 - Solution 2: In order traversal with a stack and check that previous values are always smaller `O(n)`
@@ -128,23 +200,23 @@ class Integer
     MIN = -MAX
 end
 
-def isValid?(root, max, min)
+def is_valid?(root, max, min)
     return 1 if root.nil?
 
     if (root.data <= min) || (root.data >= max)
         return 0
     end
 
-    isValid?(root.left, root.data, min) & isValid?(root.right, max, root.data)
+    is_valid?(root.left, root.data, min) & is_valid?(root.right, max, root.data)
 end
 
-def isValidBST(root)
-    isValid?(root, Integer::MAX, Integer::MIN)
+def is_valid_BST(root)
+    is_valid?(root, Integer::MAX, Integer::MIN)
 end
 ```
 
 ```ruby
-def isValidBST(root)
+def is_valid_BST(root)
   return 1 unless root
   stack = []
   prev = nil
@@ -172,7 +244,7 @@ end
 # @param A : root node of tree
 # @param B : integer
 
-def getSuccessor(self, A, B):
+def get_successor(self, A, B):
     root = A
     succ = root
 
