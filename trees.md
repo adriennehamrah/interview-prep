@@ -124,7 +124,7 @@ end
 ## Vertical Order Traversal
 - Print out nodes from left to right
 - If two nodes share the same vertical line, the lesser depth node comes first
-- Use breadth first approach and save horizontal distance of each node
+- Use level order approach and save horizontal distance of each node
 - Put nodes in hash, with horizontal distance as key
 - Sort hash by horizontal distance, smallest to largest
 
@@ -156,7 +156,7 @@ end
 ```
 
 ## Zig Zag Traversal
-- Use breadth first and reverse for each row
+- Use level order and reverse for each row
 ```
 def zigzag_levelorder(root)
   return [] unless root
