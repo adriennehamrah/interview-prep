@@ -85,6 +85,40 @@ def postorderTraversal(root)
 end
 ```
 
+## Vertical Order Traversal
+- Print out nodes from left to right
+- If two nodes share the same vertical line, the lesser depth node comes first
+- Use breadth first approach and save horizontal distance of each node
+- Put nodes in hash, with horizontal distance as key
+- Sort hash by horizontal distance, smallest to largest
+
+``` ruby
+def vert_order_util(root, horizontal_distance)
+  return [] unless root 
+  
+  res = Hash.new { |k,v| k[v] = [] }
+  curr = [root, 0]
+  queue = [curr]
+  
+  while !queue.empty?
+    curr = queue.shift
+    node = curr.first
+    hd = curr.last
+    
+    res[curr.last] << node.data 
+    
+    queue << [node.left, hd - 1 ] if node.left
+    queue << [node.right, hd + 1 ] if node.right
+  end
+  
+  res.sort_by{ |k,v| k }.map(&:last)
+end
+
+def vertical_order_traversal(root)
+  vert_order_util(root, 0)
+end
+```
+
 ## Valid BST?
 - Solution 1: Use recursion and min/max `O(n) time` as opposed to no min/max `O(n^2)`
 - Solution 2: In order traversal with a stack and check that previous values are always smaller `O(n)`
