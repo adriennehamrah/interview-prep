@@ -282,7 +282,7 @@ def longest_palindrome(str)
   center, right = 0, 0 # center and right (end) indices of palindrome
   
   (1..s.length).each do |i|
-    i_mirror = 2 * center - i
+    i_mirror = center - (i - center)
     
     # get i based on previously calculated lengths of mirror index i'
     if right > i 
