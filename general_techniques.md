@@ -208,10 +208,9 @@ def anagrams(a)
       hash[key] << (i + 1)
     else
       hash[key] = [i + 1]
-    end
-    
-    hash.values
+    end    
   end
+  hash.values
 end
 ```
 
