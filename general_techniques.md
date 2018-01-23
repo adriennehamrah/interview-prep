@@ -270,7 +270,7 @@ def sqrt(self, A):
 
 # Strings
 ## Longest Palindrome Substring
-- `O(n)` time and space
+- `O(n)` linear time and space (Manacher’s Algorithm)
 ```ruby
 def longest_palindrome(str)
   return str if str.length <= 1
