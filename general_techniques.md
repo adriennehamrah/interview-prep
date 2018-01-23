@@ -226,24 +226,23 @@ def longest_continuous_sum_zero(arr)
   
   sums = {0 => -1}
   max_len = 0
-	sum = 0
-	start = arr.length
-	
-	(0..arr.length - 1).each do |i|
-		sum += arr[i]
-		prev_idx = sums[sum]
-		if prev_idx 
-			len = i - prev_idx
-			if len > max_length 
-				max_length = len
-				start = prev_idx
-			elsif (len == max_length) && (prev_idx < start)
-				start = prev_idx
-			end
-		else
-			sums[sum] = i
-		end
-	end
+  sum = 0
+  start = arr.length
+  (0..arr.length - 1).each do |i|
+    sum += arr[i]
+    prev_idx = sums[sum]
+    if prev_idx 
+      len = i - prev_idx
+      if len > max_length 
+        max_length = len
+        start = prev_idx
+      elsif (len == max_length) && (prev_idx < start)
+        start = prev_idx
+      end
+    else
+      sums[sum] = i
+    end
+  end
   
   arr[(start+1)..(start+max_length)]
 end
