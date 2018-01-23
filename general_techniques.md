@@ -270,9 +270,50 @@ def sqrt(self, A):
 
 # Strings
 ## Longest Palindrome Substring
-- Check for longest palindrome centered around a point and expand from there.
-    - Time: `O(n^2)`, Space: `O(1)`. Code below.
-- Linear time: http://davidoncode.blogspot.com/2013/03/finding-longest-palindrome-in-ruby.html
+- `O(n)` time and space
+```ruby
+def longest_palindrome(str)
+  return str if str.length <= 1
+  
+  # convert string for easier processing
+  s = "$*" + str.split("").join("*") + "*!"
+  
+  lengths = {} # hash to store max lengths at each index
+  center, right = 0, 0 # center and right (end) indices of palindrome
+  
+  (1..s.length).each do |i|
+    i_mirror = 2 * center - i
+    
+    # get i based on previously calculated lengths of mirror index i'
+    if right > i 
+      lengths[i] = [right - i, lengths[i_mirror]].min
+    else 
+      lengths[i] = 0 
+    end
+    
+    # look for palindrome by expanding around i
+    while s[i + 1 + lengths[i]] == s[i - 1 - lengths[i]]
+      lengths[i] += 1
+    end
+    
+    # set new center if end of new palindrome is past the current end
+    if i + lengths[i] > right
+      center = i
+      right = center + lengths[i]
+    end
+  end
+  
+  # find the max length
+  max_length = lengths.values.max
+  center_i = lengths.key(max_length)
+  
+  # return the max palindrome string - make sure to use orig string here
+  str[(center_i - max_length)/2, max_length]
+end
+```
+
+- Alternative method is to just check for longest palindrome centered around a point and expand from there.
+   - Time: `O(n^2)`, Space: `O(1)`
 
 ``` ruby
 def longest_palindrome(str)  
