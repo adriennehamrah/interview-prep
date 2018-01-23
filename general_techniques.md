@@ -214,6 +214,40 @@ def anagrams(a)
 end
 ```
 
+## Longest Continuous Sequence that Sums to Zero
+- Track the cumulative sums (1 to `i`) in a hash with the index at that sum
+- Keep a start variable that points to the last index
+- If the sum is equal to a previous index, then the segment between the two indices must sum to zero
+- Set the start index to the previous index if a new longer sequence is found
+
+```ruby
+def longest_continuous_sum_zero(arr)
+  return arr if arr.empty?
+  
+  sums = {0 => -1}
+  max_len = 0
+	sum = 0
+	start = arr.length
+	
+	(0..arr.length - 1).each do |i|
+		sum += arr[i]
+		prev_idx = sums[sum]
+		if prev_idx 
+			len = i - prev_idx
+			if len > max_length 
+				max_length = len
+				start = prev_idx
+			elsif (len == max_length) && (prev_idx < start)
+				start = prev_idx
+			end
+		else
+			sums[sum] = i
+		end
+	end
+  
+  arr[(start+1)..(start+max_length)]
+end
+```
 
 # Strings
 ## Longest Palindrome Substring
