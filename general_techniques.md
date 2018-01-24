@@ -214,6 +214,23 @@ def anagrams(a)
 end
 ```
 
+## Random Weighted Value
+```ruby
+def random_weighted_value(hash)
+  total = hash.values.reduce(:+)
+  
+  selected = rand(total)
+  sum = 0 
+  
+  hash.each do |key, val|
+    sum += val 
+    if selected < sum
+      return key 
+    end
+  end
+end
+```
+
 ## Longest Continuous Sequence that Sums to Zero
 - Track the cumulative sums (1 to `i`) in a hash with the index at that sum
 - Keep a start variable that points to the last index
