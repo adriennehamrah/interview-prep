@@ -248,6 +248,27 @@ def longest_continuous_sum_zero(arr)
 end
 ```
 
+## Length of Longest Substring without Repeats
+``` ruby
+def longest_substring_without_repeat(a)
+  seen = Hash.new
+  left, right, max = 0, 0, 0
+
+  while right < a.length
+    if seen[a[right]] && left <= seen[a[right]]
+      left = seen[a[right]] + 1
+    else
+      max = [max, right - left + 1].max
+    end
+    
+    seen[a[right]] = right
+    right += 1
+  end  
+  
+  max
+end
+```
+
 # Strings
 ## Longest Palindrome Substring
 - `O(n)` linear time and space (Manacher’s Algorithm)
