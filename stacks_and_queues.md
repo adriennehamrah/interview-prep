@@ -28,6 +28,7 @@ end
 
 ## Queues
 ### Sliding Window Maximum
+- Given an array, `a` and a window size `b`, find the maximum integer for each window
 - Use a queue and always store index of max number as first element in queue
 - `O(n)` time
 ```ruby
