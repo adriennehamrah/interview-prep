@@ -67,7 +67,7 @@ def preorder_traversal(root)
   while !stack.empty? || curr
     if curr
       stack << curr 
-      res = curr.data
+      res << curr.data
       curr = curr.left 
     else
       curr = stack.pop 
