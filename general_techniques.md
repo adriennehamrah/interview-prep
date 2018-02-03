@@ -231,6 +231,35 @@ def random_weighted_value(hash)
 end
 ```
 
+## Flatten Dictionary
+``` Ruby
+def flatten_dictionary_helper(initial_key, dict, flattened)
+  dict.keys.each do |key|
+    val = dict[key]
+    
+    if !val.is_a? Hash
+      if initial_key.empty?
+        flattened[key.to_sym] = val
+      else
+        flattened[(initial_key.to_s + "." + key.to_s).to_sym] = val 
+      end
+    else
+      if initial_key.empty?
+        flatten_dictionary_helper(key.to_s, val, flattened)
+      else
+        flatten_dictionary_helper(initial_key.to_s + "." + key.to_s, val, flattened)
+      end
+    end
+  end
+  
+  flattened
+end
+
+def flatten_dictionary(dict)
+  flatten_dictionary_helper("", dict, {})
+end
+```
+
 ## Longest Continuous Sequence that Sums to Zero
 - Track the cumulative sums (1 to `i`) in a hash with the index at that sum
 - Keep a start variable that points to the last index
