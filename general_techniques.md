@@ -362,10 +362,31 @@ def form_palindrome(str, left, right)
   palindrome   
 end
 ```
+## Reproducible String
+- If string uses only ascii letters, use an array of size 256. Store count at the index corresponding to the ascii number.
+- Use a counter to also track character count after going through shorter string to stop processing code.
 
+```ruby
+def reproducible_string?(l, m)
+  charMap = Array.new(256){0}
+  charCount = 0 
+  
+  l.each_char do |ch|
+    charCount += 1 if charMap[ch.ord] == 0
+    charMap[ch.ord] += 1
+  end
+  
+  m.each_char do |ch|
+    charMap[ch.ord] -= 1
+    charCount -= 1 if charMap[ch.ord] == 0
+    return true if charCount == 0 # breaks code early so no need to go through M length
+  end  
+
+  false
+end
+```
 
 # Other Data Structures
-
 
 
 ## Hash Map
