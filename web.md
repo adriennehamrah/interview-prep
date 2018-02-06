@@ -24,3 +24,18 @@ System must satisfy the following to be considered RESTful.
 
 #### Reference
 [What RESTful actually means](https://codewords.recurse.com/issues/five/what-restful-actually-means)
+
+### HTTP
+- Safe method - Does not modify resources
+      - GET
+- Idempotent method - Can be called many times without different outcomes
+
+HTTP Method | Idempotent| Safe
+----------- | --------- | ---- 
+OPTIONS |	yes  |	yes
+GET	| yes |	yes
+HEAD |	yes	| yes
+PUT	| yes	 | no
+POST |	no |	no
+DELETE	| yes |	no
+PATCH	| no	| no
