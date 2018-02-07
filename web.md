@@ -39,3 +39,8 @@ PUT	| yes	 | no
 POST |	no |	no
 DELETE	| yes |	no
 PATCH	| no	| no
+
+#### PUT vs PATCH
+- PUT is idempotent while PATCH is not
+- PUT - send entire entity over and replace entire entity
+- PATCH - only need to send what you want updated. Can send PATCH requests without ID, in which case, the server will create new objects.
