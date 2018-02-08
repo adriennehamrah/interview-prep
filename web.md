@@ -44,3 +44,38 @@ PATCH	| no	| no
 - PUT is idempotent while PATCH is not
 - PUT - send entire entity over and replace entire entity
 - PATCH - only need to send what you want updated. Can send PATCH requests without ID, in which case, the server will create new objects.
+
+## What happens when you type a url in the browser and hit enter?
+1. Type in www.google.com.
+2. Browser checks four caches for DNS (domain name system) record to find IP.
+    - Browser
+    - If not found, browser checks OS cache 
+    - Then browser checks router cache 
+    - Then ISP cache
+3. If URL is not found in cache, ISP's DNS server issues a DNS query to find IP of server host.
+    - Contacts root name server "."
+    - Root name server redirects to top-level domain ".com"
+    - Top-level domain redirects to second-level domain "google.com" and so on.
+4. Once browser gets IP address, initiates a TCP connection with server.
+    - TCP/IP three way handshake. Send SYN/ACK/ACK messages to establish a connection.
+5. Browser sends HTTP request to web server.
+    - GET, POST, etc.
+    - Also pass cookies from browser with request.
+6. Server handles request.
+    - Web server (Apache, IIS) receives request and passes it to request handler to read and generate response.
+    - Request handler (written in ruby, php, asp.net) reads the request, updates info on server if needed, then creates response (JSON, XML, HTML)
+7. Server sends out HTTP response.
+    - Response contains webpage, status code, compression type (content-encoding), cache control, cookies, privacy info, etc
+    - 1xx indicates an informational message only
+    - 2xx indicates success of some kind
+    - 3xx redirects the client to another URL
+    - 4xx indicates an error on the client’s part
+    - 5xx indicates an error on the server’s part
+8. Browser displays HTML content (for HTML responses)
+    - Content displayed in stages:
+        - HTML skeleton
+        - Then checks HTML tags and sends out GET request for add'l elements like images, CSS stylesheets, JS files, etc 
+        
+#### Reference
+[What happens when you type a url in the browser and hit enter?](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
+  
