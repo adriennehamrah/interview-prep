@@ -145,3 +145,12 @@ p.then((val) => console.log("fulfilled:", val))
 [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/primers/promises)
 
 [ES6 Promises](http://www.datchley.name/es6-promises/)
+
+### IIFE (Immediately Invoked Function Expression)
+- Function that runs as soon as it's defined
+- Why?
+    - Prevents accessing variables within the IIFE
+    - Avoids polluting the global scope
+    - Creates fresh environment
+- Surrounding parenthesis prevents treating is a function declaration
+- Assigning an IIFE to a variable stores the result, not the function
