@@ -1,4 +1,10 @@
-# Simplified LRU Cache in Ruby Using Built in Hash
+# LRU Cache
+- Use hash map and linked list
+- Remove the least recently used item in a cache (linked list) when it's full
+- Hash map points to node object in linked list, allowing for O(1) lookup
+- Delete, insert, and lookup are all O(1)
+
+## Simplified LRU Cache in Ruby Using Built in Hash
 
 ``` ruby
 class Node
