@@ -146,7 +146,7 @@ p.then((val) => console.log("fulfilled:", val))
 
 [ES6 Promises](http://www.datchley.name/es6-promises/)
 
-### IIFE (Immediately Invoked Function Expression)
+## IIFE (Immediately Invoked Function Expression)
 - Function that runs as soon as it's defined
 - Why?
     - Prevents accessing variables within the IIFE
