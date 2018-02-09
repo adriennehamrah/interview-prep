@@ -47,3 +47,35 @@
 - Find if given nodes are connected: `O(|V|)` - linear search of rows, `O(log|V|)` - binary search
 - Considered BST for improved addition and deletion
 
+## Depth First Traversal
+## Breadth First Traversal
+
+## Topological Sort
+- Linearing ordering of vertices such that for every directed edge uv, vertex u comes before v
+- Only possible for a DAG (Directed Acyclic Graph)
+- Can be more than one sorting
+
+### Use Cases
+- Scheduling tasks/dependencies
+- Package install, NPM
+- Module bundling, Webpack
+- Minimal Spanning Tree
+
+### Tarjan's Algorithm
+- Based on a modified DFS
+1. Visit vertices in random order.
+2. Add current node to visited set.
+3. Check all adjacent vertices of this node. If all adjacent vertices have been visited or the node is a leaf node, add this node to the stack.
+4. Repeat with other unvisited vertices.
+5. After visiting every vertex, print out stack.
+
+### Kahn's Algorithm
+1. Queue all vertices with no in-edges
+2. Pop off vertices from queues
+ - Remove vertex and out-edges
+ - Push vertex into sorted array
+ - Examine destination vertices. Push and queue if no more in-edges
+ - Repeat
+ ### Coffman-Graham Algorithm
+ - Modified Kahn's that is deterministic
+
