@@ -86,13 +86,13 @@
 ### Kahn's Algorithm
 - `O(|V| + |E|)` time
 1. Compute in-degree (number of incoming edges) for all vertices. Initialize count of visited nodes as 0.
-  - Create counter hash of all nodes.
-  - Traverse all edges and increase counter of destination node by 1.
+    - Create counter hash of all nodes.
+    - Traverse all edges and increase counter of destination node by 1.
 2. Pick all the vertices with in-degree of 0 and add to queue.
 3. Remove vertex from the queue.
-  - Increment count of visited nodes by 1.
-  - Decrease in-degree by 1 for all neighboring nodes.
-  - If in-degree of a neighboring node is now zero, add it to the queue.
+    - Increment count of visited nodes by 1.
+    - Decrease in-degree by 1 for all neighboring nodes.
+    - If in-degree of a neighboring node is now zero, add it to the queue.
 4. Repeat Step 3 until the queue is empty.
 5. If count of visited nodes is not equal to the number of nodes in the graph then topological sort is not possible.
 
