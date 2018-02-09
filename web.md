@@ -78,4 +78,37 @@ PATCH	| no	| no
         
 #### Reference
 [What happens when you type a url in the browser and hit enter?](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a)
+
+## TCP/IP Internet Protocol Suite
+- Applicaton Layer (HTTP port 80, SMTP, FTP, POP)
+- Transport Layer (TCP, UDP)
+- Network/Internet Layer (IP, ICMP)
+- Physical Layer (Ethernet, ARP)
+
+### TCP Transmission Control Protocol
+- Connection-oriented - handshake to set up
+- Reliable  - manages acknowledgement, retransmission, timeout
+- Ordered data transfer 
+    - Each packet has a header that contains order and error checking
+- Heavyweight - require three packets to set up socket connection
+- Retransmission of lost packets
+- Error free data transfer
+- Flow control
+- Congestion control
+- Used by HTTP, HTTPs, FTP, SMTP, Telnet
+
+### UDP User Datagram Protocol
+- Connectionless
+- Unreliable - no acknowledgment, retranmission, or timeout
+- Unordered packets
+- Lightweight
+- Datagrams - packets sent individually and checked for integrity only if they arrival
+- No congestion control
+- Broadcasts - connectionless allows for broadcasting
+- Lack of retransmisson delays - Good for real-time steaming apps like VoIP, games
+- Transaction Oriented - Good for simple query response protocols like DNS, Network Time Protocol
+- Used by DNS, DHCP, TFTP, SNMP, RIP, VoIP
+
+
+
   
