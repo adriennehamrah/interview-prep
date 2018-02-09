@@ -48,7 +48,20 @@
 - Considered BST for improved addition and deletion
 
 ## Depth First Traversal
+- `O(|V| + |E|)` time
+1. Start with a node and add to stack. Mark node as visited.
+3. Find the first adjacent node in some order of preference.
+4. Add that node to stack and mark as visited.
+5. Repeat with the next adjacent node, until there are no more adjacent unvisited.
+6. Pop off the last node in stack and look for unvisited vertices, mark as visited and push onto stack.
+7. Repeat until stack is empty.
+
 ## Breadth First Traversal
+- `O(|V| + |E|)` time
+1. Start at a node. Add node to queue and add to visited.
+2. While there is a queue: Check for all adjacent nodes in some order and add to queue and visited.
+3. Dequeue current node.
+4. Look at next node in queue and repeat.
 
 ## Topological Sort
 - Linearing ordering of vertices such that for every directed edge uv, vertex u comes before v
@@ -63,19 +76,26 @@
 
 ### Tarjan's Algorithm
 - Based on a modified DFS
+- `O(|V| + |E|)` time
 1. Visit vertices in random order.
 2. Add current node to visited set.
-3. Check all adjacent vertices of this node. If all adjacent vertices have been visited or the node is a leaf node, add this node to the stack.
+3. Call topological sort on all adjacent vertices of this node. Once all adjacent vertices (and their adjacent vertices, and so on) have been visited, add this node to the stack.
 4. Repeat with other unvisited vertices.
 5. After visiting every vertex, print out stack.
 
 ### Kahn's Algorithm
-1. Queue all vertices with no in-edges
-2. Pop off vertices from queues
- - Remove vertex and out-edges
- - Push vertex into sorted array
- - Examine destination vertices. Push and queue if no more in-edges
- - Repeat
+- `O(|V| + |E|)` time
+1. Compute in-degree (number of incoming edges) for all vertices. Initialize count of visited nodes as 0.
+  - Create counter hash of all nodes.
+  - Traverse all edges and increase counter of destination node by 1.
+2. Pick all the vertices with in-degree of 0 and add to queue.
+3. Remove vertex from the queue.
+  - Increment count of visited nodes by 1.
+  - Decrease in-degree by 1 for all neighboring nodes.
+  - If in-degree of a neighboring node is now zero, add it to the queue.
+4. Repeat Step 3 until the queue is empty.
+5. If count of visited nodes is not equal to the number of nodes in the graph then topological sort is not possible.
+
  ### Coffman-Graham Algorithm
  - Modified Kahn's that is deterministic
 
