@@ -54,9 +54,10 @@ def sqrt(self, A):
         return A
     low = 2
     high = A/2
-    mid = low + (high - low)/2
-
+    
     while low <= high:
+        mid = low + (high - low)/2
+        
         if mid * mid == A:
             return mid
         elif mid * mid > A:
